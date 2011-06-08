@@ -1,1 +1,13 @@
-Versión incompleta,los ladrillos ya se muestran correctamente, pero la bola los atraviesa en lugar de deshabilitarlos y cambiar el sentido
+jArkanoid Beta 1
+
+Primera versión jugable:
+	- Fallos cuando la bola golpea por arriba a los ladrillos
+	- Otros fallos menores
+
+Instrucciones:
+	Evita que se caiga la pelota al tiempo que rompes los ladrillos
+
+Controles:
+	Pulsa a para mover la barra a la izquierda
+	Pulsa d para mover la barra a la derecha
+

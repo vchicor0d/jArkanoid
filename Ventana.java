@@ -20,7 +20,6 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana() {
         initComponents();
         new Hilobola((Panel)panel).start();
-        //new Hilobarra((Panel)panel).start();
     }
 
     /** This method is called from within the constructor to

@@ -40,10 +40,10 @@ public class Hilobola extends Thread{
             if (y==0){
                 limY=false;
             }
-            if (p.ladrillo(x, y)){
+            if (p.golpe(x, y)){
                 limY=!limY;
                 p.setpunt(p.getpunt()+20);
-            }
+            } 
             x=(limX)?x-1:x+1;
             y=(limY)?y-1:y+1;
             p.setbolaX(x);
@@ -55,11 +55,14 @@ public class Hilobola extends Thread{
                     super.interrupt();
                     return;
                 } else {
-                    p.setbolaX(0);
-                    p.setbolaY(0);
-                    p.setbarraX((p.getBounds().width/2)-25);
-                    p.setpunt(0);
+                    p.setprimera();
+                    p.repaint();
                 }
+            }
+            if (p.getrestantes()==0){
+                JOptionPane.showMessageDialog(p, "Enhorabuena, has completado el nivel", "Nivel completado", JOptionPane.INFORMATION_MESSAGE);
+                p.siguiente();
+                p.repaint();
             }
             try{
                 sleep(vel);
