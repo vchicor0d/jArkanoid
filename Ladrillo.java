@@ -12,23 +12,22 @@ import java.awt.Color;
  */
 public class Ladrillo {
     
-    private Panel p;
     private boolean enabled;
     private int x;
     private int y;
-    private java.awt.Color c;
     
-    public Ladrillo(Panel p, int x, int y, java.awt.Color c){
-        this.p=p;
+    public Ladrillo(int x, int y){
         this.enabled=true;
         this.x=x;
         this.y=y;
-        c=Color.BLUE;
-        System.out.println(c);
     }
     
     public void disable(){
         enabled=false;
+    }
+    
+    public boolean isenabled(){
+        return enabled;
     }
     
     public int getx (){
@@ -37,14 +36,6 @@ public class Ladrillo {
     
     public int gety (){
         return y;
-    }
-    
-    public java.awt.Color getColor(){
-        return c;
-    }
-    
-    public void setColor (){
-        c= Color.black;
     }
     
 }

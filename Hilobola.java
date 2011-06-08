@@ -40,6 +40,10 @@ public class Hilobola extends Thread{
             if (y==0){
                 limY=false;
             }
+            if (p.ladrillo(x, y)){
+                limY=!limY;
+                p.setpunt(p.getpunt()+20);
+            }
             x=(limX)?x-1:x+1;
             y=(limY)?y-1:y+1;
             p.setbolaX(x);

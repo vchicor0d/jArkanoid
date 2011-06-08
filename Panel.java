@@ -15,15 +15,11 @@ public class Panel extends JPanel{
     private int barrax;
     private int punt;
     private boolean primera=true;
-    private ArrayList<Ladrillo> ladrillos;
+    private ArrayList<Ladrillo> ladrillos=new ArrayList<Ladrillo> ();;
 
     public Panel() {
         super();
-        this.bolax=0;
-        this.bolay=0;
         this.punt=0;
-        ladrillos=new ArrayList<Ladrillo> ();
-        //this.barrax=(526/2)-25;
     }
 
     public int getbolaX() {
@@ -58,11 +54,28 @@ public class Panel extends JPanel{
         return punt;
     }
     
-    private void enladrillar(){
-        for (int i=10; i<this.getBounds().width-60; i+=60){
-            ladrillos.add(new Ladrillo(this, i, 30, Color.blue));
+    public void setprimera(){
+        primera=true;
+    }
+    
+    public boolean ladrillo(int x, int y){
+        boolean golpe=false;
+        Ladrillo l;
+        for (int i=0; i<ladrillos.size(); i++){
+            l=ladrillos.get(i);
+            if (l.isenabled() && l.getx()-x<-50 && l.getx()-x>=0 && l.gety()-y<-10 && l.gety()-y>=0){
+                golpe=true;
+                ladrillos.get(i).disable();
+            }
         }
-        this.repaint();
+        return golpe;
+    }
+    
+    private void enladrillar(){
+        ladrillos=new ArrayList<Ladrillo> ();
+        for (int i=10; i<this.getBounds().width-60; i+=60){
+            ladrillos.add(new Ladrillo(i, 30));
+        }
     }
 
     @Override
@@ -70,15 +83,16 @@ public class Panel extends JPanel{
         super.paintComponent(g);
         this.setBackground(Color.black);
         if (primera){
+            bolax=(this.getBounds().width/2)-7;
+            bolay=this.getBounds().height-30;
             barrax=(this.getBounds().width/2)-25;
             enladrillar();
         }
         for (int i=0; i<ladrillos.size(); i++){
             int x=ladrillos.get(i).getx();
             int y=ladrillos.get(i).gety();
-            java.awt.Color c = ladrillos.get(i).getColor();
             //System.out.println("x:"+x+" y:"+y+" color:"+c);
-            g.setColor(c);
+            g.setColor((ladrillos.get(i).isenabled())?Color.blue:Color.BLACK);
             g.fillRect(x, y, 50, 10);
         }
 //        for (int i=10; i<this.getBounds().width-60; i+=60){
