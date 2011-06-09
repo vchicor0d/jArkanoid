@@ -1,4 +1,7 @@
-jArkanoid Beta 1
+jArkanoid Beta 2
+
+Corrección de errores:
+	El juego ya no debería saltarse un nivel cuando completas el anterior
 
 Primera versión jugable:
 	- Fallos cuando la bola golpea por arriba a los ladrillos

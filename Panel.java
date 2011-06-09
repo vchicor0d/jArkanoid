@@ -62,6 +62,7 @@ public class Panel extends JPanel{
     }
     
     public void siguiente(){
+        restantes=1;
         siguiente=true;
         fase++;
     }
