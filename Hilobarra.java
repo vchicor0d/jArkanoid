@@ -7,7 +7,6 @@ package arkanoid;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import sun.org.mozilla.javascript.internal.jdk11.VMBridge_jdk11;
 
 /**
  *
