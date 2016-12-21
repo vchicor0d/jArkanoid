@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package arkanoid;
+package jarkanoid;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -18,7 +18,7 @@ public class Panel extends JPanel{
     private int restantes=1;
     private boolean primera=true;
     private boolean siguiente=false;
-    private ArrayList<Ladrillo> ladrillos=new ArrayList<Ladrillo> ();;
+    private ArrayList<Ladrillo> ladrillos=new ArrayList<Ladrillo> ();
 
     public Panel() {
         super();
@@ -40,37 +40,37 @@ public class Panel extends JPanel{
     public void setbolaY(int y) {
         this.bolay = y;
     }
-    
+
     public int getbarraX(){
         return barrax;
     }
-    
+
     public void setbarraX(int barrax){
         this.barrax=barrax;
     }
-    
+
     public void setpunt(int punt){
         this.punt=punt;
     }
-    
+
     public int getpunt(){
         return punt;
     }
-    
+
     public void setprimera(){
         primera=true;
     }
-    
+
     public void siguiente(){
         restantes=1;
         siguiente=true;
         fase++;
     }
-    
+
     public int getrestantes(){
         return restantes;
     }
-    
+
     public boolean golpe(int x, int y){
         boolean golpe=false;
         Ladrillo l;
@@ -88,7 +88,7 @@ public class Panel extends JPanel{
         }
         return golpe;
     }
-    
+
     private void enladrillar(){
         ladrillos=new ArrayList<Ladrillo> ();
         for (int f=0; f<fase; f++){

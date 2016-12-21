@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package arkanoid;
+package jarkanoid;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -12,13 +12,13 @@ import javax.swing.JOptionPane;
  * @author Victor
  */
 public class Hilobola extends Thread{
-    
+
     private Panel p;
-    
+
     public Hilobola (Panel p){
         this.p=p;
     }
-    
+
     public void run(){
         int x;
         int y;
@@ -43,7 +43,7 @@ public class Hilobola extends Thread{
             if (p.golpe(x, y)){
                 limY=!limY;
                 p.setpunt(p.getpunt()+20);
-            } 
+            }
             x=(limX)?x-1:x+1;
             y=(limY)?y-1:y+1;
             p.setbolaX(x);
@@ -67,7 +67,7 @@ public class Hilobola extends Thread{
             try{
                 sleep(vel);
             } catch (InterruptedException ie){
-                
+
             }
         }
     }
