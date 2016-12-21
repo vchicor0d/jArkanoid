@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'jArkanoid',
+               'Implementation-Version': 1.0,
+               'Add-Classpath': true,
+               'Main-Class': 'jarkanoid.Ventana'
+  }
+}
